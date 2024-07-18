@@ -4,7 +4,7 @@ const {decodeToken}=require(.../backend/utils/index.js)
 async function createNew(req, res) {
   const decodetoken = decodedToken(req.headers.authorization.split(" ")[1]);
   if (!decodetoken) {
-    res.status(400).json({ message: "token invalid or expired" });
+    res.status(400).json({ message: "invalid or expired token " });
   }
   const { title, description } = req.body;
   const newblog = {
